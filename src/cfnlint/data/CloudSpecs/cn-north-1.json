@@ -34326,6 +34326,7 @@
       "Properties": {
         "PropertyGroups": {
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-environmentproperties.html#cfn-kinesisanalyticsv2-application-environmentproperties-propertygroups",
+          "DuplicatesAllowed": true,
           "ItemType": "PropertyGroup",
           "Required": false,
           "Type": "List",
@@ -34446,6 +34447,7 @@
       "Properties": {
         "RecordColumns": {
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputschema.html#cfn-kinesisanalyticsv2-application-inputschema-recordcolumns",
+          "DuplicatesAllowed": true,
           "ItemType": "RecordColumn",
           "Required": true,
           "Type": "List",
@@ -34601,8 +34603,9 @@
         },
         "PropertyMap": {
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-propertygroup.html#cfn-kinesisanalyticsv2-application-propertygroup-propertymap",
-          "PrimitiveType": "Json",
+          "PrimitiveItemType": "String",
           "Required": false,
+          "Type": "Map",
           "UpdateType": "Mutable"
         }
       }
@@ -34653,7 +34656,7 @@
         "BasePath": {
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-s3contentbaselocation.html#cfn-kinesisanalyticsv2-application-s3contentbaselocation-basepath",
           "PrimitiveType": "String",
-          "Required": true,
+          "Required": false,
           "UpdateType": "Mutable"
         },
         "BucketARN": {
@@ -34670,13 +34673,13 @@
         "BucketARN": {
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-s3contentlocation.html#cfn-kinesisanalyticsv2-application-s3contentlocation-bucketarn",
           "PrimitiveType": "String",
-          "Required": false,
+          "Required": true,
           "UpdateType": "Mutable"
         },
         "FileKey": {
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-s3contentlocation.html#cfn-kinesisanalyticsv2-application-s3contentlocation-filekey",
           "PrimitiveType": "String",
-          "Required": false,
+          "Required": true,
           "UpdateType": "Mutable"
         },
         "ObjectVersion": {
@@ -34692,6 +34695,7 @@
       "Properties": {
         "Inputs": {
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-sqlapplicationconfiguration.html#cfn-kinesisanalyticsv2-application-sqlapplicationconfiguration-inputs",
+          "DuplicatesAllowed": true,
           "ItemType": "Input",
           "Required": false,
           "Type": "List",
@@ -45852,7 +45856,7 @@
       }
     }
   },
-  "ResourceSpecificationVersion": "73.1.0",
+  "ResourceSpecificationVersion": "75.0.0",
   "ResourceTypes": {
     "AWS::AccessAnalyzer::Analyzer": {
       "Attributes": {
@@ -55314,6 +55318,11 @@
       }
     },
     "AWS::EC2::NatGateway": {
+      "Attributes": {
+        "NatGatewayId": {
+          "PrimitiveType": "String"
+        }
+      },
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html",
       "Properties": {
         "AllocationId": {
@@ -56973,16 +56982,21 @@
       }
     },
     "AWS::EC2::VPNGateway": {
-      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html",
+      "Attributes": {
+        "VPNGatewayId": {
+          "PrimitiveType": "String"
+        }
+      },
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html",
       "Properties": {
         "AmazonSideAsn": {
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-amazonsideasn",
-          "PrimitiveType": "Long",
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html#cfn-ec2-vpngateway-amazonsideasn",
+          "PrimitiveType": "Integer",
           "Required": false,
           "UpdateType": "Immutable"
         },
         "Tags": {
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-tags",
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html#cfn-ec2-vpngateway-tags",
           "DuplicatesAllowed": true,
           "ItemType": "Tag",
           "Required": false,
@@ -56990,7 +57004,7 @@
           "UpdateType": "Mutable"
         },
         "Type": {
-          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-type",
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html#cfn-ec2-vpngateway-type",
           "PrimitiveType": "String",
           "Required": true,
           "UpdateType": "Immutable",
@@ -65511,6 +65525,7 @@
         },
         "Tags": {
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html#cfn-kinesisanalyticsv2-application-tags",
+          "DuplicatesAllowed": true,
           "ItemType": "Tag",
           "Required": false,
           "Type": "List",
@@ -68017,7 +68032,10 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourcetype",
           "PrimitiveType": "String",
           "Required": false,
-          "UpdateType": "Conditional"
+          "UpdateType": "Conditional",
+          "Value": {
+            "ValueType": "AWS::RDS::EventSubscription.SourceType"
+          }
         }
       }
     },
@@ -78084,6 +78102,18 @@
     "AWS::RDS::DBInstance.PromotionTier": {
       "NumberMax": 15,
       "NumberMin": 0
+    },
+    "AWS::RDS::EventSubscription.SourceType": {
+      "AllowedValues": [
+        "custom-engine-version",
+        "db-cluster",
+        "db-cluster-snapshot",
+        "db-instance",
+        "db-proxy",
+        "db-parameter-group",
+        "db-security-group",
+        "db-snapshot"
+      ]
     },
     "AWS::Redshift::Cluster.NumberOfNodes": {
       "NumberMax": 100,
